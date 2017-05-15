@@ -1,15 +1,23 @@
-@(title: String)(content: Html)
+@(question: CompleteQuestion)
 
-<!DOCTYPE html>
+@main("Question") {
 
-<html>
-<head>
-    <title>@title</title>
-    <title>Quiz Question</title>
-    <p> put quiz content here </p>
-</head>
-<body>
-@nav()
-@content
-</body>
-</html>
+<div class="jumbotron text-center">
+    <div class="container">
+        @if(question != null){
+            <h1>@question.questionText</h1>
+        }
+    </div>
+</div>
+
+<div class="container">
+    @if(question != null){
+        @for(a <- question.answers) {
+    <p>
+    <a type="button" class="btn btn-lg btn-primary" href=@a.nextLink > @a.answerText</a>
+    </p>
+        }
+    }
+</div>
+
+}
