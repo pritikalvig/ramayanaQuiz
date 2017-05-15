@@ -15,8 +15,8 @@ case class QuestionDataStore() {
 
   def buildMap(): Boolean = {
 
-    val baseurl = "http://localhost:5000/q/"
-    val resulturl = "http://localhost:5000/result/"
+    val baseurl = "https://ramayanaquiz.herokuapp.com/q/"
+    val resulturl = "https://ramayanaquiz.herokuapp.com/result/"
 
     // Question 1
     val q1Text = "You wake up in the morning and are almost late for class! You decide to wear…"
